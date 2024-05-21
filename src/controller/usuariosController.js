@@ -64,8 +64,6 @@ import { usuariosService } from "../services/usuarios.service.js";
         .json({ error: `Ya existe un usuarios con email ${email}` });
     }
 
-    // resto de validaciones aquí SIEMPRE en CONTROLLER...!!!
-
     try {
       let nuevoUsuario = await usuariosService.crearUsuario({ nombre, email });
       res.setHeader("Content-Type", "application/json");
