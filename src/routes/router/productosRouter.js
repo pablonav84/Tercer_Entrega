@@ -11,7 +11,7 @@ export class ProductosRouter extends CustomRouter{
         this.get("/", passportCall("jwt"), auth(["usuario"]), ProductosController.getProductos)
         this.get("/:id", passportCall("jwt"), auth(["usuario"]), ProductosController.getProductoById)
         this.post("/", passportCall("jwt"), auth(["admin"]), ProductosController.newProducto);
-        this.post("/:id", passportCall("jwt"), auth(["usuario"]), ProductosController.updateProducto);
+        this.post("/:id", passportCall("jwt"), auth(["admin"]), ProductosController.updateProducto);
         this.delete("/:id", passportCall("jwt"), auth(["admin"]), ProductosController.deleteProducto);
     }
 }

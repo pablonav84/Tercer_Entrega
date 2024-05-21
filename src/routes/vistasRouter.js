@@ -11,6 +11,12 @@ router.get('/', (req, res) => {
   res.status(200).render('login');
 })
 
+router.get('/chat', passportCall(["usuario"]), async (req, res) => {
+    
+  res.setHeader("Content-Type", "text/html");
+  res.status(200).render('chat');
+})
+
 router.get('/vistaMail', (req, res) => {
   res.status(200).render('vistaMail');
 })
